@@ -1,38 +1,48 @@
+/* Smooth Scroll from Landing to Hero */
 function scrollToNext() {
-    window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+    const hero = document.querySelector('.hero');
+    window.scrollTo({
+        top: hero.offsetTop,
+        behavior: 'smooth'
+    });
 }
 
-const reveals = document.querySelectorAll('.reveal');
-window.addEventListener('scroll', () => {
-    reveals.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            el.classList.add('visible');
+/* Modern Countdown Timer */
+function startCountdown() {
+    // Set your drop date here
+    const dropDate = new Date("2024-08-01T00:00:00");
+
+    function updateTimer() {
+        const now = new Date();
+        const diff = dropDate - now;
+
+        if (diff <= 0) {
+            document.getElementById("countdown").innerText = "LIVE NOW";
+            return;
         }
-    });
-});
 
-const dropDate = new Date("2026-08-01T00:00:00");
-setInterval(() => {
-    const now = new Date();
-    const diff = dropDate - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
 
-    if (diff <= 0) {
-        document.getElementById("timer").innerText = "LIVE NOW";
-        return;
+        document.getElementById("countdown").innerText =
+            `${days}D • ${hours}H • ${minutes}M`;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    updateTimer();
+    setInterval(updateTimer, 60000); // Update every minute
+}
 
-    document.getElementById("timer").innerText =
-        `${days}D ${hours}H ${minutes}M`;
-}, 1000);
+startCountdown();
 
-document.getElementById("notifyForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const phone = document.getElementById("phoneInput").value;
-    console.log("Phone submitted:", phone);
-    document.getElementById("confirmationMessage").classList.remove("hidden");
+/* Fade-in Scroll Animation */
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            sec.classList.add('visible');
+        }
+    });
 });

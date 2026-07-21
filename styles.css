@@ -119,3 +119,11 @@ button[type="submit"] {
     opacity: 1;
     transform: translateY(0);
 }
+
+.drop-timer {
+    margin-bottom: 20px;
+}
+
+.signup {
+    margin-top: 10px;
+}

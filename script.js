@@ -10,7 +10,7 @@ function scrollToNext() {
 /* Modern Countdown Timer */
 function startCountdown() {
     // Set your drop date here
-    const dropDate = new Date("2026-08-01T00:00:00");
+   const dropDate = new Date("2026-07-21T18:35:00");
 
     function updateTimer() {
         const now = new Date();

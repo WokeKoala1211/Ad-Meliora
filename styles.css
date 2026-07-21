@@ -132,3 +132,7 @@ button[type="submit"] {
 .signup {
     margin-top: 10px;
 }
+
+.hero {
+    text-align: center;
+}

@@ -1,3 +1,4 @@
+/* Global */
 body {
     margin: 0;
     font-family: 'Times New Roman', serif;
@@ -5,12 +6,14 @@ body {
     color: #111;
 }
 
+/* Headings */
 h2 {
     font-size: 2.2rem;
     letter-spacing: 1px;
     margin-bottom: 15px;
 }
 
+/* Landing Section */
 .landing {
     position: relative;
     height: 100vh;
@@ -62,25 +65,35 @@ h2 {
     border-radius: 3px;
 }
 
-.brand-story,
-.countdown,
-.drop {
-    padding: 80px 20px;
-    max-width: 700px;
-    margin: auto;
+/* Hero Section */
+.hero {
     text-align: center;
-    line-height: 1.6;
+    padding: 40px 20px;
 }
 
-/* Clean, tight spacing for the signup block */
+/* Modern Drop Title */
+.drop-title {
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Modern Countdown */
+.drop-countdown {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-align: center;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+/* Signup Section */
 .signup {
     margin-top: 10px;
     padding: 0;
-}
-
-#timer {
-    font-size: 2rem;
-    letter-spacing: 2px;
 }
 
 input[type="tel"] {
@@ -105,6 +118,7 @@ button[type="submit"] {
     display: none;
 }
 
+/* Animations */
 .fade-in {
     animation: fadeIn 1.8s ease forwards;
     opacity: 0;
@@ -125,14 +139,7 @@ button[type="submit"] {
     transform: translateY(0);
 }
 
+/* Spacing */
 .drop-timer {
     margin-bottom: 20px;
-}
-
-.signup {
-    margin-top: 10px;
-}
-
-.hero {
-    text-align: center;
 }

@@ -64,13 +64,18 @@ h2 {
 
 .brand-story,
 .countdown,
-.drop,
-.signup {
+.drop {
     padding: 80px 20px;
     max-width: 700px;
     margin: auto;
     text-align: center;
     line-height: 1.6;
+}
+
+/* Clean, tight spacing for the signup block */
+.signup {
+    margin-top: 10px;
+    padding: 0;
 }
 
 #timer {

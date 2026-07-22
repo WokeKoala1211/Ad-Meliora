@@ -189,3 +189,89 @@ button[type="submit"]:hover {
     opacity: 0.6;
     letter-spacing: 2px;
 }
+
+/* ============================
+   MOBILE RESPONSIVE DESIGN
+   ============================ */
+
+/* Medium screens (tablets, large phones) */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 70vh;
+        padding: 20px;
+    }
+
+    .brand-name {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .about, .signup {
+        padding: 35px 15px;
+        max-width: 90%;
+    }
+
+    input[type="tel"] {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+/* Small screens (iPhones, Android phones) */
+@media (max-width: 480px) {
+
+    .hero {
+        height: auto;
+        padding: 40px 10px;
+    }
+
+    .brand-name {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .cta-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 6px;
+    }
+
+    .about, .signup {
+        padding: 25px 10px;
+    }
+
+    input[type="tel"] {
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    button[type="submit"] {
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.85rem;
+        padding: 15px;
+    }
+}

@@ -78,6 +78,35 @@ h2 {
     margin: auto;
     box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
     border-radius: 10px;
+    /* ============================
+   MOBILE BACKGROUND FIX
+   ============================ */
+
+.hero {
+    background-size: cover;        /* Makes the image fill the screen */
+    background-position: center;   /* Keeps the subject centered */
+    background-repeat: no-repeat;  /* Prevents tiling */
+    background-attachment: scroll; /* Prevents weird zooming on mobile */
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+    .hero {
+        background-size: cover;
+        background-position: center;
+        height: 70vh;              /* Adjust height for tablets */
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+    .hero {
+        background-size: cover;    /* Forces full coverage */
+        background-position: center;
+        height: 60vh;              /* Prevents giant empty space */
+    }
+}
+
 }
 
 /* Modern Drop Title */

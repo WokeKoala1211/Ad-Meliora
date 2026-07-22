@@ -106,6 +106,13 @@ h2 {
         height: 60vh;              /* Prevents giant empty space */
     }
 }
+@media (max-width: 480px) {
+    .hero {
+        height: 100vh;             /* Full screen height */
+        background-size: cover;
+        background-position: center;
+    }
+}
 
 }
 

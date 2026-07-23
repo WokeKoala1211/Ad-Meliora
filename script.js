@@ -9,8 +9,7 @@ function scrollToNext() {
 
 /* Modern Countdown Timer */
 function startCountdown() {
-    // Set your drop date here
-    const dropDate = new Date("2026-07-22T21:00:00");
+    const dropDate = new Date("2026-07-21T18:35:00");
 
     function updateTimer() {
         const now = new Date();
@@ -30,7 +29,7 @@ function startCountdown() {
     }
 
     updateTimer();
-    setInterval(updateTimer, 60000); // Update every minute
+    setInterval(updateTimer, 60000);
 }
 
 startCountdown();
@@ -48,19 +47,46 @@ window.addEventListener('scroll', () => {
 });
 
 /* Phone Number Notification Submission */
+let lastSubmitTime = 0;
+
 document.getElementById("notifyForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
-    const phone = document.getElementById("phoneInput").value;
+    const phone = document.getElementById("phoneInput").value.trim();
+    const cleaned = phone.replace(/\D/g, "");
+
+    // Validation
+    if (cleaned.length !== 10) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+    }
+
+    // Rate limiting
+    const nowTime = Date.now();
+    if (nowTime - lastSubmitTime < 5000) {
+        alert("Please wait a moment before submitting again.");
+        return;
+    }
+    lastSubmitTime = nowTime;
+
+    // Loading animation
+    const button = document.querySelector("#notifyForm button");
+    button.disabled = true;
+    button.innerText = "Sending...";
 
     const response = await fetch("https://admeliora-notify-backend.onrender.com/notify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone })
+        body: JSON.stringify({ phone: cleaned })
     });
 
+    // Restore button
+    button.disabled = false;
+    button.innerText = "Notify Me";
+
     if (response.ok) {
-        document.getElementById("confirmationMessage").classList.remove("hidden");
+        const msg = document.getElementById("confirmationMessage");
+        msg.classList.add("visible");
     } else {
         alert("Error saving your number. Try again.");
     }

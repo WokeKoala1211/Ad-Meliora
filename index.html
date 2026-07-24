@@ -28,19 +28,26 @@
     <div id="popup" class="popup hidden">
         <div class="popup-box">
             <h3>Get Drop Notifications</h3>
-            <p>Enter your phone number to get notified when new drops go live.</p>
+            <p>Choose how you want to be notified.</p>
 
             <form id="popupForm">
-                <input id="popupPhone" type="text" placeholder="Phone Number" required>
+
+                <select id="contactType">
+                    <option value="phone">Phone Number</option>
+                    <option value="email">Email Address</option>
+                </select>
+
+                <input id="popupInput" type="text" placeholder="Enter phone or email" required>
+
                 <button type="submit">Notify Me</button>
             </form>
 
-            <p id="popupConfirm" class="hidden">Thanks — you’ll get a text when the next drop is live.</p>
+            <div id="checkmark" class="checkmark hidden">✓</div>
+
+            <p id="popupConfirm" class="hidden">You're all set — see you at the drop.</p>
         </div>
     </div>
 
     <script src="popup.js"></script>
 </body>
-
 </html>
-<!-- rebuild -->

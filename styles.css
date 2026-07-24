@@ -1,4 +1,4 @@
-/* Global Reset */
+/* Global */
 * {
     margin: 0;
     padding: 0;
@@ -9,82 +9,45 @@
 body {
     background: #000;
     color: #fff;
-    overflow-x: hidden;
 }
 
-/* Landing Section */
+/* Summer Drop Hero */
 .landing {
     height: 100vh;
     width: 100%;
     background: url('background.png') center/cover no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-bottom: 60px;
     text-align: center;
+    padding: 20px;
 }
 
 .landing h1 {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.scroll-btn {
-    margin-top: 20px;
-    padding: 12px 28px;
-    background: #fff;
-    color: #000;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.scroll-btn:hover {
-    background: #e5e5e5;
-    transform: scale(1.05);
-}
-
-/* Hero Section */
-.hero {
-    padding: 120px 20px;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
 #countdown {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 600;
-    margin-top: 10px;
-    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
-/* Notification Form */
-.notify-container {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.notify-container p {
-    font-size: 1.1rem;
+.tagline {
+    font-size: 1.2rem;
     opacity: 0.85;
+    margin-bottom: 25px;
 }
 
+/* Form */
 #notifyForm {
     display: flex;
     gap: 10px;
-    margin-top: 25px;
+    margin-bottom: 20px;
 }
 
 #phoneInput {
@@ -92,12 +55,9 @@ body {
     width: 240px;
     border-radius: 10px;
     border: none;
-    outline: none;
-    font-size: 1rem;
     background: #111;
     color: #fff;
     border: 1px solid #333;
-    transition: 0.3s ease;
 }
 
 #phoneInput:focus {
@@ -112,19 +72,16 @@ body {
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
-    transition: 0.3s ease;
     font-weight: 600;
+    transition: 0.3s ease;
 }
 
 #notifyForm button:hover {
-    background: #e5e5e5;
     transform: scale(1.05);
 }
 
-/* Success Message Animation */
+/* Confirmation */
 #confirmationMessage {
-    margin-top: 20px;
-    font-size: 1.1rem;
     opacity: 0;
     transition: opacity 0.6s ease;
 }
@@ -133,35 +90,18 @@ body {
     opacity: 1;
 }
 
-/* Fade-in Scroll Animation */
-.section {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* Footer */
 footer {
-    margin-top: 140px;
-    padding: 40px;
+    margin-top: 40px;
     text-align: center;
-    font-size: 0.9rem;
     opacity: 0.7;
+    font-size: 0.9rem;
 }
 
-/* Mobile Responsive */
+/* Mobile */
 @media (max-width: 480px) {
     .landing h1 {
-        font-size: 2.4rem;
-    }
-
-    .hero h2 {
-        font-size: 2.2rem;
+        font-size: 2.6rem;
     }
 
     #countdown {
@@ -173,10 +113,7 @@ footer {
         width: 90%;
     }
 
-    #phoneInput {
-        width: 100%;
-    }
-
+    #phoneInput,
     #notifyForm button {
         width: 100%;
     }

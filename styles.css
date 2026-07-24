@@ -215,3 +215,52 @@ footer {
         width: 100%;
     }
 }
+/* POPUP */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-box {
+    background: #111;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 350px;
+    color: #fff;
+}
+
+#popupForm input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: none;
+    background: #222;
+    color: #fff;
+}
+
+#popupForm button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    color: #000;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+

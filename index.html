@@ -3,61 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>AD MELIORA</title>
-
-    <!-- Modern Brand Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- Landing Section (Background Image) -->
-<div class="landing">
-    <div class="gradient"></div>
-
-    <div class="content fade-in">
-        <h1 class="headline">AD MELIORA</h1>
-        <p class="subtext">SUMMER DROP</p>
-        <button class="cta" onclick="scrollToNext()">ENTER</button>
-    </div>
-</div>
-
-<!-- Hero Section -->
-<section class="hero section">
-    <div class="drop-timer">
-        <h2 class="drop-title">NEXT DROP</h2>
-        <p id="countdown" class="drop-countdown">Loading...</p>
+    <!-- Landing Section -->
+    <div class="landing section">
+        <h1>NEXT DROP</h1>
+        <button class="scroll-btn" onclick="scrollToNext()">Explore</button>
     </div>
 
-    <div class="signup">
-        <h3 class="signup-title">Get Drop Notifications</h3>
-        <p class="signup-subtext">Enter your phone number to get notified when new drops go live.</p>
+    <!-- Hero Section -->
+    <div class="hero section">
+        <h2>LIVE NOW</h2>
+        <div id="countdown"></div>
 
-        <form id="notifyForm">
-            <input type="tel" id="phoneInput" placeholder="Phone Number" required>
-            <button type="submit">Notify Me</button>
-        </form>
+        <div class="notify-container">
+            <p>Get Drop Notifications</p>
 
-        <p id="confirmationMessage" class="hidden">
-            Thanks — you’ll get a text when the next drop is live.
-        </p>
+            <form id="notifyForm">
+                <input id="phoneInput" type="text" placeholder="Phone Number">
+                <button type="submit">Notify Me</button>
+            </form>
+
+            <div id="confirmationMessage">You're subscribed!</div>
+        </div>
     </div>
-</section>
 
-<!-- Footer -->
-<footer class="footer">
-    © 2026 AD MELIORA — ALL RIGHTS RESERVED
-</footer>
+    <footer>
+        © 2026 AD MELIORA — ALL RIGHTS RESERVED
+    </footer>
 
-<script>
-    // Smooth scroll from ENTER button
-    function scrollToNext() {
-        document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
-    }
-</script>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

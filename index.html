@@ -14,9 +14,9 @@
 
         <div class="hero-content">
             <h1 class="brand-title">AD MELIORA</h1>
-            <h2 class="brand-subtitle">Summer Drop!</h2>
+            <h2 class="brand-subtitle">Summer Drop</h2>
 
-            <a href="drop.html" class="enter-btn">Enter</a>
+            <button id="enterBtn" class="enter-btn">Enter</button>
 
             <p class="hero-quote">
                 YOU CAN’T STAY THE SAME AND EXPECT THE INCOME TO CHANGE.
@@ -24,6 +24,23 @@
         </div>
     </div>
 
+    <!-- POPUP MODAL -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-box">
+            <h3>Get Drop Notifications</h3>
+            <p>Enter your phone number to get notified when new drops go live.</p>
+
+            <form id="popupForm">
+                <input id="popupPhone" type="text" placeholder="Phone Number" required>
+                <button type="submit">Notify Me</button>
+            </form>
+
+            <p id="popupConfirm" class="hidden">Thanks — you’ll get a text when the next drop is live.</p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
 </body>
+
 </html>
 <!-- rebuild -->

@@ -3,33 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AD MELIORA</title>
+    <title>AD MELIORA — SUMMER DROP</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- Landing Section -->
-    <div class="landing section">
-        <h1>NEXT DROP</h1>
-        <button class="scroll-btn" onclick="scrollToNext()">Explore</button>
-    </div>
+    <!-- Summer Drop Hero -->
+    <div class="landing">
+        <h1>SUMMER DROP</h1>
+        <h2 id="countdown"></h2>
 
-    <!-- Hero Section -->
-    <div class="hero section">
-        <h2>LIVE NOW</h2>
-        <div id="countdown"></div>
+        <p class="tagline">Get notified when new drops go live.</p>
 
-        <div class="notify-container">
-            <p>Get Drop Notifications</p>
+        <form id="notifyForm">
+            <input id="phoneInput" type="text" placeholder="Phone Number">
+            <button type="submit">Notify Me</button>
+        </form>
 
-            <form id="notifyForm">
-                <input id="phoneInput" type="text" placeholder="Phone Number">
-                <button type="submit">Notify Me</button>
-            </form>
-
-            <div id="confirmationMessage">You're subscribed!</div>
-        </div>
+        <div id="confirmationMessage">You're subscribed!</div>
     </div>
 
     <footer>

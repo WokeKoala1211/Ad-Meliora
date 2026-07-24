@@ -26,27 +26,30 @@
 
     <!-- POPUP MODAL -->
     <div id="popup" class="popup hidden">
-        <div class="popup-box">
-            <h3>Get Drop Notifications</h3>
-            <p>Choose how you want to be notified.</p>
+    <div class="popup-box">
+        <h3>Get Drop Notifications</h3>
+        <p>Choose how you want to be notified.</p>
 
-            <form id="popupForm">
+        <form id="popupForm">
 
-                <select id="contactType">
-                    <option value="phone">Phone Number</option>
-                    <option value="email">Email Address</option>
-                </select>
+            <select id="contactType">
+                <option value="phone">Phone Number</option>
+                <option value="email">Email Address</option>
+            </select>
 
-                <input id="popupInput" type="text" placeholder="Enter phone or email" required>
+            <input id="popupInput" type="text" placeholder="Enter phone or email" required>
 
-                <button type="submit">Notify Me</button>
-            </form>
+            <button type="submit">Notify Me</button>
+        </form>
 
-            <div id="checkmark" class="checkmark hidden">✓</div>
+        <div id="checkmark" class="checkmark hidden">✓</div>
 
-            <p id="popupConfirm" class="hidden">You're all set — see you at the drop.</p>
-        </div>
+        <p id="popupConfirm" class="hidden">You're all set — see you at the drop.</p>
     </div>
+</div>
+
+<script src="popup.js"></script>
+
 
     <script src="popup.js"></script>
 </body>

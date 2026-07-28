@@ -12,6 +12,7 @@ document.getElementById("popupForm").addEventListener("submit", async (e) => {
 
     let payload = {};
 
+    // PHONE VALIDATION
     if (type === "phone") {
         const cleaned = value.replace(/\D/g, "");
         if (cleaned.length !== 10) {
@@ -21,6 +22,7 @@ document.getElementById("popupForm").addEventListener("submit", async (e) => {
         payload.phone = cleaned;
     }
 
+    // EMAIL VALIDATION
     if (type === "email") {
         const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
         if (!validEmail) {
@@ -30,22 +32,27 @@ document.getElementById("popupForm").addEventListener("submit", async (e) => {
         payload.email = value;
     }
 
+    // SEND TO BACKEND
     const response = await fetch("https://admeliora-notify-backend.onrender.com/notify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
     });
 
+    // SUCCESS
     if (response.ok) {
+
+        // Show checkmark animation
         document.getElementById("checkmark").classList.add("show");
+
+        // Show confirmation text
         document.getElementById("popupConfirm").classList.remove("hidden");
 
+        // Fade out popup and return to hero page
         setTimeout(() => {
-            document.body.classList.add("fade-out");
-            setTimeout(() => {
-                window.location.href = "drop.html";
-            }, 600);
+            document.getElementById("popup").classList.add("hidden");
         }, 1500);
+
     } else {
         alert("Error saving your info. Try again.");
     }

@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
 import twilio from "twilio";
@@ -17,7 +20,7 @@ app.post("/notify", async (req, res) => {
     const { phone, email } = req.body;
 
     try {
-        // If phone number → send SMS
+        // SMS
         if (phone) {
             await client.messages.create({
                 body: "You're subscribed! AD MELIORA will text you when new drops go live.",
@@ -26,7 +29,7 @@ app.post("/notify", async (req, res) => {
             });
         }
 
-        // If email → send email
+        // EMAIL
         if (email) {
             await resend.emails.send({
                 from: "AD MELIORA <no-reply@admelioraapparel.store>",
@@ -43,7 +46,7 @@ app.post("/notify", async (req, res) => {
         res.status(200).json({ success: true });
 
     } catch (err) {
-        console.error(err);
+        console.error("Email/SMS Error:", err);
         res.status(500).json({ error: "Failed to send notification" });
     }
 });

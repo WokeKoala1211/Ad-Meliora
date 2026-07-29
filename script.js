@@ -65,7 +65,7 @@ document.getElementById("notifyForm").addEventListener("submit", async function(
     const response = await fetch("https://admeliora-notify-backend.onrender.com/notify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone: cleaned })
+        body: JSON.stringify({ phone: cleaned, email })
     });
 
     button.disabled = false;

@@ -60,7 +60,7 @@ app.post("/notify", async (req, res) => {
       console.log("📧 Sending email to:", email);
 
       const result = await resend.emails.send({
-        from: "AD MELIORA <"admelioraapparel.store">",
+        from: "AD MELIORA <"support@admelioraapparel.store">",
         to: email,
         subject: "You're subscribed to AD MELIORA drops",
         html: `
